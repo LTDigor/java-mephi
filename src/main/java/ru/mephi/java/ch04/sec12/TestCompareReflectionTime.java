@@ -1,4 +1,4 @@
-package ru.mephi.java.ch04.sec012;
+package ru.mephi.java.ch04.sec12;
 
 import java.lang.reflect.Method;
 
