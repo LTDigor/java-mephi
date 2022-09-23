@@ -2,7 +2,6 @@ package ru.mephi.java.ch04.sec13;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.function.DoubleFunction;
 
 public class PrintTable {
     public static void printTable(Method method, double minVal, double maxVal, double step) throws InvocationTargetException, IllegalAccessException {

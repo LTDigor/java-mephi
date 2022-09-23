@@ -10,6 +10,7 @@ public class PrintAllFields {
         Class<?> cl = myClass.getClass();
         while (cl != null) {
             for (Field field : cl.getDeclaredFields()) {
+                field.setAccessible(true);
                 System.out.println(
                         Modifier.toString(field.getModifiers()) + " " +
                         field.getAnnotatedType() + " " +
