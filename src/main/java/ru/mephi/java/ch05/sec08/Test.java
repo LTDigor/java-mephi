@@ -1,24 +1,38 @@
 package ru.mephi.java.ch05.sec08;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.concurrent.locks.ReentrantLock;
-
 public class Test {
     public static void main(String[] args) {
-        Path path = Paths.get("src/main/resources/ch05/sec01/dataCorrect.txt");
+        //with lock
+        Runnable task = (() -> {
+            try(AutoCloseable ignored = MyLockedClass.lock()) {
+                for (int i = 0; i < 100; i++) {
+                    System.out.println(i);
+                }
+                System.out.println("Done!\n");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
 
-        ReentrantLock lock = new ReentrantLock();
-        try (BufferedReader in3 = Files.newBufferedReader(path, StandardCharsets.UTF_8)) {
-            lock.lock();
-        } catch (IOException ex) {
-            System.err.println("Caught IOException: " + ex.getMessage());
-        }
 
+        Thread t1 = new Thread(task);
+        Thread t2 = new Thread(task);
 
+        t1.start();
+        t2.start();
+
+//        //without lock
+//        Runnable taskWithoutLock = (() -> {
+//            for (int i = 0; i < 100; i++) {
+//                System.out.println(i);
+//            }
+//            System.out.println("Done!\n");
+//        });
+//
+//        Thread t1NoLock = new Thread(taskWithoutLock);
+//        Thread t2NoLock = new Thread(taskWithoutLock);
+//
+//        t1NoLock.start();
+//        t2NoLock.start();
     }
 }
