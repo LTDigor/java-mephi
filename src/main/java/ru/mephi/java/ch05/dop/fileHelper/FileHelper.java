@@ -39,4 +39,8 @@ public class FileHelper {
                 throw e;
             }
     }
+
+    public ArrayList<Exception> getExceptions() {
+        return exceptions;
+    }
 }
