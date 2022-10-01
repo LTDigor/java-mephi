@@ -16,7 +16,7 @@ public class MyLockedClass {
                         reentrantLock.unlock();
                 }
                 catch (Exception e) {
-                    System.out.println(e);
+                    e.printStackTrace();
                 }
             }
         };

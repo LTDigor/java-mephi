@@ -19,12 +19,20 @@ public class ReadFromFile {
     }
 
     public static double sumOfValues(String filename) throws FileNotFoundException, NumberFormatException {
-        ArrayList<Double> doubleArrayList = readValues(filename);
+        ArrayList<Double> doubleArrayList;
+        try {
+            doubleArrayList = readValues(filename);
+        }
+        catch (FileNotFoundException e) {
+            throw new RuntimeException("File doesn't found", e);
+        }
+        catch (NumberFormatException e) {
+            throw new RuntimeException("Wrong data format", e);
+        }
         double res = 0.0;
 
-        for (double val: doubleArrayList) {
+        for (double val: doubleArrayList)
             res += val;
-        }
 
         return res;
     }

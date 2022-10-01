@@ -13,9 +13,11 @@ public class Test {
             System.out.println(ReadFromFile.sumOfValues(CORRECT_DATA));
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
+            e.printStackTrace();
         }
         catch (NumberFormatException e) {
             System.out.println("Wrong file data");
+            e.printStackTrace();
         }
 
         //wrong file
@@ -23,9 +25,11 @@ public class Test {
             System.out.println(ReadFromFile.readValues(INCORRECT_DATA));
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
+            e.printStackTrace();
         }
         catch (NumberFormatException e) {
             System.out.println("Wrong file data");
+            e.printStackTrace();
         }
 
         //file not found
@@ -33,9 +37,11 @@ public class Test {
             System.out.println(ReadFromFile.readValues(NOT_FOUND_DATA));
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
+            e.printStackTrace();
         }
         catch (NumberFormatException e) {
             System.out.println("Wrong file data");
+            e.printStackTrace();
         }
 
         //wrong file
@@ -43,9 +49,11 @@ public class Test {
             System.out.println(ReadFromFile.sumOfValues(INCORRECT_DATA));
         } catch (FileNotFoundException e) {
             System.out.println("Cant get sum. File not found");
+            e.printStackTrace();
         }
         catch (NumberFormatException e) {
             System.out.println("Cant get sum. Wrong file data");
+            e.printStackTrace();
         }
 
         //file not found
@@ -53,9 +61,11 @@ public class Test {
             System.out.println(ReadFromFile.sumOfValues(NOT_FOUND_DATA));
         } catch (FileNotFoundException e) {
             System.out.println("Cant get sum. File not found");
+            e.printStackTrace();
         }
         catch (NumberFormatException e) {
             System.out.println("Cant get sum. Wrong file data");
+            e.printStackTrace();
         }
 
     }

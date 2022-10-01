@@ -18,15 +18,25 @@ public class Test {
         try {
             in = new Scanner(Paths.get(INPUT_FILENAME));
             out = new PrintWriter(OUTPUT_FILENAME);
-        } catch (FileNotFoundException e) {
+
+            out.println(in.nextInt());
+        }
+        catch (FileNotFoundException e) {
             e.printStackTrace();
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
+            //do smth
+            System.out.println("IOException");
+            e.printStackTrace();
+        }
+        catch (NumberFormatException e) {
+            //do smth else
+            System.out.println("Wrong input data");
             e.printStackTrace();
         }
         finally {
             closeMyStream(in);
             closeMyStream(out);
-
         }
     }
 
