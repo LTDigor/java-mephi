@@ -1,13 +1,17 @@
 package ru.mephi.java.ch06.sec24;
 
-import java.util.ArrayList;
 
 public class Test {
     public static void main(String[] args) {
+        Class<?> cl = null;
 
-    }
-
-    public static void testMethod(Class<?> cl) {
-        //cl.getClasses();
+        cl.getInterfaces();
+        cl.getSuperclass();
+        cl.getTypeName();
+        cl.getModifiers();
+        cl.getFields();
+        cl.getComponentType();
+        cl.isSynthetic();
+        cl.getClass();
     }
 }
