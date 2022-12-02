@@ -14,12 +14,7 @@ public class TestReadWords {
         Map<String, Integer> map = new TreeMap<>();
         while (scanner.hasNext()) {
             String word = scanner.next();
-            if (map.containsKey(word)) {
-                map.replace(word, map.get(word) + 1);
-            }
-            else {
-                map.put(word, 1);
-            }
+            map.merge(word, 1, Integer::sum);
         }
 
         for (String key: map.keySet()) {
