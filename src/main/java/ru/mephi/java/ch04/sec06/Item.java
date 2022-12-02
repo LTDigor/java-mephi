@@ -23,7 +23,7 @@ public class Item {
         // Check that otherObject is an Item
         if (!(otherObject instanceof Item)) return false;
 
-        // Test whether the instance variables have identical values
+        // ArrayOperationsTest whether the instance variables have identical values
         Item other = (Item) otherObject;
         return Objects.equals(description, other.description) && price == other.price;
     }
