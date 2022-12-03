@@ -10,14 +10,17 @@ public class Test {
         File file = new File("src/main/resources/ch07/sec08/data.txt");
         Set<String> words = ReadAllWords.wordsFromFile(file);
 
-        System.out.println(words);
+        System.out.println("Words set: " + words);
 
         Scanner scanner = new Scanner(file);
+        int lineNumber = 1;
         while (scanner.hasNext()) {
             String line = scanner.nextLine();
             if(ReadAllWords.lineToSet(line).equals(words)) {
-                System.out.println(line);
+                System.out.println(lineNumber + ": " + line);
             }
+
+            lineNumber++;
         }
     }
 }
