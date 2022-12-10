@@ -8,7 +8,7 @@ public class TestMapCounters {
     public static void main(String[] args) {
         Map<String, Integer> map = new HashMap<>();
 
-        for(int i = 0; i < 2; i++) {
+        for (int i = 0; i < 2; i++) {
             // update counter with merge
             map.merge("wordMerge", 1, Integer::sum);
 
