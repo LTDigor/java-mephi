@@ -46,9 +46,24 @@ public class ArrayWrapper <T>{
 
     // construct the list of wrapper
     private void compute(){
-        list = new ArrayList<>(parentList);
-        for (Predicate<T> filter: filters) {
-            list.removeIf((x) -> !filter.test(x));
+//        list = new ArrayList<>(parentList);
+//        for (Predicate<T> filter: filters) {
+//            list.removeIf((x) -> !filter.test(x));
+//        }
+
+        list = new ArrayList<>(parentList.size());
+        for (T item: parentList) {
+            boolean isCorrect = true;
+            for (Predicate<T> filter: filters) {
+                if (!filter.test(item)) {
+                    isCorrect = false;
+                    break;
+                }
+            }
+
+            if (isCorrect) {
+                list.add(item);
+            }
         }
 
         parentList = null;

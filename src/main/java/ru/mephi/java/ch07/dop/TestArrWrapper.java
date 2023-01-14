@@ -9,11 +9,8 @@ public class TestArrWrapper {
 
         ArrayWrapper<String> container0 = new ArrayWrapper<>(list);
 
-        ArrayWrapper<String> container1 = container0.where((str) -> str.length() > 1);
-        System.out.println(container1);
+        ArrayWrapper<String> container1 = container0.where((str) -> str.length() > 1).where((str) -> str.length() < 6);
 
-        ArrayWrapper<String> container2 = container1.where((str) -> str.length() < 7);
-        ArrayWrapper<String> container3 = container2.where((str) -> str.length() > 2);
-        System.out.println(container3);
+        System.out.println(container1);
     }
 }
