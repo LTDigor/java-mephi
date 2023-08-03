@@ -10,6 +10,6 @@ public class sec16 {
     public static double average(double firstVal, double... values) {
         double sum = firstVal;
         for (double v : values) sum += v;
-        return values.length == 0 ? 0 : sum / (values.length + 1);
+        return values.length == 0 ? firstVal : sum / (values.length + 1);
     }
 }
