@@ -1,4 +1,4 @@
-package ru.mephi.java.ch08.sec06
+package ru.mephi.java.ch08.sec07
 
 import java.io.File
 import java.util.regex.Pattern
@@ -19,7 +19,6 @@ fun main() {
 
     file.inputStream().bufferedReader()
         .lines()
-        .parallel()
         .flatMap { Pattern.compile("\\PL+").splitAsStream(it) }
         .filter{ it.isNotEmpty() }
         .collect(Collectors.groupingBy({it}, Collectors.counting()))
