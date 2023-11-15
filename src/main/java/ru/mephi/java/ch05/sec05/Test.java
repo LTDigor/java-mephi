@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class Test {
-    private static final String INPUT_FILENAME = "src/main/resources/ch05/sec05/input.txt";
+    private static final String INPUT_FILENAME = "src/main/resources/ch05/sec05/input1.txt";
     private static final String OUTPUT_FILENAME = "src/main/resources/ch05/sec05/output.txt";
 
     public static void main(String[] args) {

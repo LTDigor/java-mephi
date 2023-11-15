@@ -5,7 +5,7 @@ object TimestampPrinter {
         val start = System.currentTimeMillis()
         block.invoke()
         val end = System.currentTimeMillis()
-        println(end - start)
 
+        println(end - start)
     }
 }
